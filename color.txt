@@ -1,0 +1,10 @@
+#5e04d37a
+  "tabBar": {
+    "color": "#E69B03",
+    "selectedColor": "#D1494E",
+    "backgroundColor": "#DBD0A7",
+    "borderStyle": "white",
+    "list": [],
+    "position": "bottom",
+    "custom": false
+  },

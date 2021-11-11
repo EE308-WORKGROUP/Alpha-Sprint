@@ -1,0 +1,63 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 2911772 */
+  src: url('//at.alicdn.com/t/font_2911772_5pgzjup5l2b.woff2?t=1636095946268') format('woff2'),
+       url('//at.alicdn.com/t/font_2911772_5pgzjup5l2b.woff?t=1636095946268') format('woff'),
+       url('//at.alicdn.com/t/font_2911772_5pgzjup5l2b.ttf?t=1636095946268') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shijian:before {
+  content: "\e60c";
+}
+
+.icon-jiantou:before{
+  content: "\e61b";
+}
+
+.icon-sousuo:before {
+  content: "\e60d";
+}
+
+.icon-bianji:before {
+  content: "\e607";
+}
+
+.icon-rili:before {
+  content: "\e60a";
+}
+
+.icon-shibai:before {
+  content: "\e60b";
+}
+
+.icon-xihuan:before {
+  content: "\e610";
+}
+
+.icon-caidan:before {
+  content: "\e608";
+}

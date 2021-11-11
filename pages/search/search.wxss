@@ -1,0 +1,44 @@
+/* pages/search/search.wxss */
+page{
+  height: 100%;
+  background-color: #EBEFF2;
+}
+
+.page-body .cells__title{
+  justify-content: center;
+  height: 200PX;
+  display: flex;
+  font-size: xx-large;
+}
+.cell_input{
+  display: flex;
+  height: 80rpx;
+  width: 600rpx;
+  border-radius:20rpx;
+  background-color: #A3568E;
+  align-items: center;
+  text-align: center;
+  box-shadow:5rpx 5rpx 5rpx #CdCfCf;
+}
+.fontSearch{
+  color:#DBF6D3;
+  font-size: x-large;
+  font-weight: 400;
+}
+.iconfont .icon-sousuo{
+  width: 90rpx;
+  height: 90rpx;
+  display: block;
+  color: #DBF6D3;
+  box-sizing: border-box;
+  position: relative;
+  left: 611rpx;
+  top: 669rpx;
+  font-size: x-large;
+  font-weight: 400;
+}
+
+.icon-shoucang:before {
+  content: "\e60f";
+}
+

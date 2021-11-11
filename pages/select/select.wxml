@@ -1,0 +1,41 @@
+<!--pages/select/select.wxml-->
+
+<view style="position: relative; width: 750rpx; height: 1222rpx; display: block; box-sizing: border-box; left: 0rpx; top: 55rpx">
+<text style="position: relative; font-size: xxx-large; left: 51rpx; top: 28rpx; font-weight: 800">课程列表</text>
+  <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; background-color: #DBD0A7; position: relative; border-radius: 40rpx" bindtap="learn">
+    <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE308</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text>
+    </view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; background-color: rgb(211, 208, 208); position: relative; border-radius: 40rpx" bindtap="learn">
+    <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE309</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text>
+    </view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; background-color: #DBD0A7; position: relative; border-radius: 40rpx" bindtap="learn">
+    <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE310</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text>
+    </view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; position: relative; border-radius: 40rpx; background-color: rgb(211, 208, 208)" bindtap="learn">
+      <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE302</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text></view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; background-color: #DBD0A7; position: relative; border-radius: 40rpx" bindtap="learn">
+    <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE310</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text>
+    </view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; position: relative; border-radius: 40rpx; background-color: rgb(211, 208, 208)" bindtap="learn">
+      <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE302</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text></view>
+    <view style="width: 671rpx; height: 138rpx; display: block; box-sizing: border-box; left: 29rpx; top: 80rpx; background-color: #DBD0A7; position: relative; border-radius: 40rpx" bindtap="learn">
+    <icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 55rpx; position: relative; left: 582rpx; top: 44rpx"></icon>
+    <text style="font-size: x-large; position: relative; left: -5rpx; top: 13rpx">EE310</text>
+    <text style="font-size: large; position: relative; left: -128rpx; top: 58rpx">Arduino的使用技巧</text>
+    </view>
+    
+</view>
+  
+

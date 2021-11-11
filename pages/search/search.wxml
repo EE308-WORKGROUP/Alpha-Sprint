@@ -1,0 +1,45 @@
+<!--pages/search/search.wxml-->
+
+<view class="partSearch" style="position: relative; width: 761rpx; height: 374rpx; display: block; box-sizing: border-box; left: -10rpx; top: 203rpx">
+<view class="cell_input" style="position: relative; left: 401rpx; top: 91rpx; width: 330rpx; height: 93rpx; border-radius: 50rpx; display: flex; box-sizing: border-box">
+  <input style="width: 323rpx; height: 98rpx; display: block; box-sizing: border-box" class="weui-input" placeholder="  search" placeholder-class="iconfont icon-sousuo fontSearch"/>
+</view>
+
+<image class="ardino" src="../../image/Arduino.png" style="position: relative; left: -28rpx; top: -234rpx; width: 457rpx; height: 345rpx; display: inline-block; box-sizing: border-box"> </image>
+
+<view style="width: 328rpx; height: 205rpx; box-sizing: border-box; position: relative; left: 403rpx; top: -586rpx; background-color: #00979D; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; display: block"></view>
+</view>
+<view class="xinshou" style="position: relative; width: 328rpx; height: 154rpx; display: block; box-sizing: border-box; left: 24rpx; top: 49rpx; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; background-color: #00979D">
+<text style="position: relative; left: 180rpx; top: 28rpx; font-size: x-large; color: #dbf6d3d0">初学者</text>
+<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 40rpx; position: relative; left: -109rpx; top: 80rpx"></icon>
+<text style="position: relative; left: -109rpx; top: 78rpx; font-size: large; color: #dbf6d3d0; font-weight: 500">Arduino</text>
+<text style="position: relative; left: 188rpx; top: 35rpx; font-size: medium; color: #dbf6d3d0">\n入门教程</text>
+</view>
+<view style="position: relative; width: 328rpx; height: 154rpx; display: block; box-sizing: border-box; left: 24rpx; top: 69rpx; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; background-color: #5e04d37a">
+<text style="position: relative; left: 180rpx; top: 28rpx; font-size: x-large; color: #dbf6d3d0">进阶者</text>
+<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 40rpx; position: relative; left: -109rpx; top: 80rpx"></icon>
+<text style="position: relative; left: -109rpx; top: 78rpx; font-size: large; color: #dbf6d3d0; font-weight: 500">Arduino</text>
+<text style="position: relative; left: 188rpx; top: 35rpx; font-size: medium; color: #dbf6d3d0">\n模块介绍</text>
+</view>
+
+<view style="width: 328rpx; height: 330rpx; box-sizing: border-box; position: relative; left: 392rpx; top: -261rpx; background-color: #ffffff; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; display: block">
+<text style="position: relative; left: 42rpx; top: 60rpx; font-size: xx-large; color: #6B5E56">收藏夹
+</text>
+<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: xxx-large; position: relative; left: 20rpx; top: 124rpx; width: 82rpx; height: 89rpx; display: inline-block; box-sizing: border-box"></icon>
+</view>
+<!--index.wxml-->  
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="position: relative; left: 24rpx; top: -220rpx; width: 696rpx; height: 292rpx; display: block; box-sizing: border-box; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf">  
+      <block wx:for="{{movies}}" wx:for-index="index">  
+        <swiper-item>  
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill" style="height: 100%;width: 100%;"/>
+          <text style="position: relative;color: #6B5E56;" >{{item.wenzi}}</text>
+        </swiper-item>  
+      </block>  
+    </swiper>  
+
+
+
+
+
+
+
