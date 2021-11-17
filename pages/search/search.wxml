@@ -1,41 +1,100 @@
 <!--pages/search/search.wxml-->
+<view>
+<view style="background-color: #F04F5F; position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx" >
+  <icon class="iconfont icon-sign-out" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+</view>
+<view class="navbar" style="width: 220rpx; height: 732rpx;">
+ <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
+   <icon class="{{item.icon}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+  </view>
+</view>
+<view style="background-color: #636FC1; position: relative; width: 220rpx; height: 156rpx; display: block; box-sizing: border-box; left: 531rpx;"></view>
+<view style="background-color: #FEFFFE; position: relative; width: 222rpx; height: 354rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx">
 
-<view class="partSearch" style="position: relative; width: 761rpx; height: 374rpx; display: block; box-sizing: border-box; left: -10rpx; top: 203rpx">
-<view class="cell_input" style="position: relative; left: 401rpx; top: 91rpx; width: 330rpx; height: 93rpx; border-radius: 50rpx; display: flex; box-sizing: border-box">
-  <input style="width: 323rpx; height: 98rpx; display: block; box-sizing: border-box" class="weui-input" placeholder="  search" placeholder-class="iconfont icon-sousuo fontSearch"/>
+  <view class="container" style="position: relative; width: 222rpx; height: 270rpx; display: flex; box-sizing: border-box; left: -2rpx; top: -2rpx">
+  <view class="userinfo" style="width: 220rpx; height: 220rpx; display: block; box-sizing: border-box; position: relative; top: -147rpx">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" style="width: 150rpx; height: 150rpx; display: block; box-sizing: border-box; position: relative;border-radius: 50%;background-color: antiquewhite;top: -10rpx;"> </button>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" style="width: 150rpx; height: 150rpx; display: block; box-sizing: border-box; position: relative;border-radius: 50%;background-color: antiquewhite;top: -10rpx;left:35rpx"></image>
+      <view class="userinfo-nickname" style="font-size: lager;align-items:center;justify-content:center;width: 220rpx;display: flex;">{{userInfo.nickName}}</view>
+    </block>
+  </view>
+</view>
+</view>
 </view>
 
-<image class="ardino" src="../../image/Arduino.png" style="position: relative; left: -28rpx; top: -234rpx; width: 457rpx; height: 345rpx; display: inline-block; box-sizing: border-box"> </image>
-
-<view style="width: 328rpx; height: 205rpx; box-sizing: border-box; position: relative; left: 403rpx; top: -586rpx; background-color: #00979D; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; display: block"></view>
+<view class = "line" style="position: relative; width: 466rpx; height: 20rpx; display: block; box-sizing: border-box; left: 35rpx; top: -1406rpx" ></view>
+<block wx:if="{{currentTab==0}}">
+<view style=" left: 35rpx; top: -1406rpx;width: 466rpx;position: relative;">
+<view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box;">
+  <icon class="iconfont icon-sousuo" style="color: #FEFFFE; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
+  <input placeholder='' placeholder-style="font-size:larger;" style="position: relative; left: 77rpx; top: 24rpx; width: 243rpx; height: 40rpx; display: block; box-sizing: border-box"></input>
+  <text style="color: #FEFFFE; position: relative; left: -2rpx; top: -80rpx">SEARCH</text>
 </view>
-<view class="xinshou" style="position: relative; width: 328rpx; height: 154rpx; display: block; box-sizing: border-box; left: 24rpx; top: 49rpx; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; background-color: #00979D">
-<text style="position: relative; left: 180rpx; top: 28rpx; font-size: x-large; color: #dbf6d3d0">初学者</text>
-<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 40rpx; position: relative; left: -109rpx; top: 80rpx"></icon>
-<text style="position: relative; left: -109rpx; top: 78rpx; font-size: large; color: #dbf6d3d0; font-weight: 500">Arduino</text>
-<text style="position: relative; left: 188rpx; top: 35rpx; font-size: medium; color: #dbf6d3d0">\n入门教程</text>
-</view>
-<view style="position: relative; width: 328rpx; height: 154rpx; display: block; box-sizing: border-box; left: 24rpx; top: 69rpx; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; background-color: #5e04d37a">
-<text style="position: relative; left: 180rpx; top: 28rpx; font-size: x-large; color: #dbf6d3d0">进阶者</text>
-<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: 40rpx; position: relative; left: -109rpx; top: 80rpx"></icon>
-<text style="position: relative; left: -109rpx; top: 78rpx; font-size: large; color: #dbf6d3d0; font-weight: 500">Arduino</text>
-<text style="position: relative; left: 188rpx; top: 35rpx; font-size: medium; color: #dbf6d3d0">\n模块介绍</text>
-</view>
-
-<view style="width: 328rpx; height: 330rpx; box-sizing: border-box; position: relative; left: 392rpx; top: -261rpx; background-color: #ffffff; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf; display: block">
-<text style="position: relative; left: 42rpx; top: 60rpx; font-size: xx-large; color: #6B5E56">收藏夹
+<view class="swiperHomePage"style="position: relative; display: block; box-sizing: border-box; left: 0rpx; top: -1073rpx" style="position: relative;width: 466rpx; height: 702rpx; display: block; box-sizing: border-box">
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="position: relative; left: 53rpx; top: 0rpx; width: 360rpx; height: 360rpx; display: block; box-sizing: border-box; border-radius: 180rpx" circular="true">   
+  <block wx:for="{{movies}}" wx:key="*this">  
+    <swiper-item>
+      <view style="width: 400rpx; height: 400rpx; display: block; box-sizing: border-box;border-radius: 180rpx;">
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill" style="width: 360rpx; height: 360rpx; border-radius: 200rpx; display: inline-block; box-sizing: border-box"></image>
+      <text style="color: #dbf6d3d0; position: relative; font-size: xx-large; top: -305rpx; left: 60rpx">{{item.wenzi}}</text>
+      </view>
+      <icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 48rpx; top: -173rpx; display: inline-block; box-sizing: border-box;;"></icon>
+    </swiper-item>  
+  </block>
+</swiper>
+<view style="width: 466rpx; height: 383rpx; display: block; box-sizing: border-box">
+  <text class = "jitang" style="position: relative; left: 22rpx; top: 37rpx; color: #fefffe9f; width: 432rpx; height: 231rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">Most of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris.”
 </text>
-<icon class="iconfont icon-jiantou" style="color: rgb(73, 72, 72); font-size: xxx-large; position: relative; left: 20rpx; top: 124rpx; width: 82rpx; height: 89rpx; display: inline-block; box-sizing: border-box"></icon>
+<text class = "jitang" style="position: relative; left: 169rpx; top: 37rpx; color: #fefffe9f; width: 285rpx; height: 58rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">—— Larry Wall
+</text>
 </view>
-<!--index.wxml-->  
-<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="position: relative; left: 24rpx; top: -220rpx; width: 696rpx; height: 292rpx; display: block; box-sizing: border-box; border-radius: 40rpx; box-shadow: 5rpx 5rpx 5rpx #CdCfCf">  
-      <block wx:for="{{movies}}" wx:for-index="index">  
-        <swiper-item>  
-          <image src="{{item.url}}" class="slide-image" mode="aspectFill" style="height: 100%;width: 100%;"/>
-          <text style="position: relative;color: #6B5E56;" >{{item.wenzi}}</text>
-        </swiper-item>  
-      </block>  
-    </swiper>  
+</view>
+</view>
+</block>
+
+<block wx:if="{{currentTab==1}}">
+<view style="left: 35rpx; top: -1406rpx; width: 466rpx; position: relative; height: 1372rpx; display: block; box-sizing: border-box">
+<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+<text style="color: #fefffe9f; font-size: xxx-large; position: relative; left: 0rpx; top: 22rpx">初学者</text>
+<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 62rpx">
+适用于初学者的教程类博客</text>
+<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 395rpx; top: -116rpx; display: inline-block; box-sizing: border-box"></icon>
+</view>
+<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx;">
+<text style="color: #fefffe9f; font-size: xxx-large; position: relative; left: 0rpx; top: 22rpx">进阶者</text>
+<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 62rpx">
+适用于进阶者的模块类参考</text>
+<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 395rpx; top: -116rpx; display: inline-block; box-sizing: border-box"></icon>
+</view>
+<view style="width: 466rpx; height: 433rpx; display: block; box-sizing: border-box">
+<text style="position: relative; font-size: larger; color: #fefffe9f; left: -1rpx; top: 35rpx">“People think that computer science is the art of geniuses but the actual reality is the opposite, just many people doing things that build on each other, like a wall of mini stones”
+</text>
+<text style="position: relative; font-size: larger; color: #fefffe9f; left: 165rpx; top: 55rpx">——Donald Knut</text>
+</view>
+<view class="minyan" style="position: relative;"></view>
+<view class="zhongwen" style="width: 466rpx; height: 359rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 0rpx">
+<text style="position: relative; font-size: larger; color: #fefffe9f; left: -4rpx; top: 26rpx">“人们认为计算机科学是天才的艺术，但事实完全相反：只是很多人在共同建立起来的事物之上工作，就像一条由小石头铺成的小径。”
+</text>
+<text style="position: relative; font-size: larger; color: #fefffe9f; left: 165rpx; top: 71rpx">——Donald Knut</text>
+</view>
+</view>
+</block>
+
+<block wx:if="{{currentTab==2}}">
+<block wx:for="{{favorite}}" wx:key="*this">
+<view class="gezi" style="width: 466rpx;background-color: #fefffe9f;height: 100rpx;">
+<image src="{{item.url}}" style="width: 466rpx;"></image>
+<text style="width: 466rpx;">{{item.title}} </text>
+<text style="width: 466rpx;">{{item.text}}</text>
+</view>
+</block>
+</block>
+
+
+
 
 
 

@@ -1,43 +1,15 @@
 {
     "pages": [
         "pages/search/search",
-        "pages/index/index",
         "pages/learn/learn",
-        "pages/result/result",
-        "pages/favorite/favorite",
-        "pages/history/history",
-        "pages/select/select"
+        "pages/result/result"
     ],
     "window": {
-        "navigationBarBackgroundColor": "#00979D",
+        "navigationBarBackgroundColor": "#636FC1",
         "navigationBarTextStyle": "black",
         "navigationBarTitleText": "Arduino helper",
         "backgroundTextStyle": "light",
-        "backgroundColor": "#EBEFF2"
-    },
-    "tabBar": {
-        "backgroundColor": "#FFFFFF",
-        "selectedColor": "#EBEFF2",
-        "list": [
-            {
-                "pagePath": "pages/search/search",
-                "text": "搜索",
-                "iconPath": "image/scan.png",
-                "selectedIconPath": "image/scan.png"
-            },
-            {
-                "pagePath": "pages/select/select",
-                "text": "学习",
-                "iconPath": "image/code.png",
-                "selectedIconPath": "image/code.png"
-            },
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "image/home.png",
-                "selectedIconPath": "image/home.png"
-            }
-        ]
+        "backgroundColor": "#636FC1"
     },
     "networkTimeout": {
         "request": 10000,
