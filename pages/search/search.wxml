@@ -5,7 +5,12 @@
 </view>
 <view class="navbar" style="width: 220rpx; height: 732rpx;">
  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
+  <block wx:if="{{currentTab==index}}">
+    <icon class="{{item.iconFill}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+  </block>
+  <block wx:if="{{currentTab!==index}}">
    <icon class="{{item.icon}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+   </block>
   </view>
 </view>
 <view style="background-color: #636FC1; position: relative; width: 220rpx; height: 156rpx; display: block; box-sizing: border-box; left: 531rpx;"></view>
@@ -85,10 +90,10 @@
 
 <block wx:if="{{currentTab==2}}">
 <block wx:for="{{favorite}}" wx:key="*this">
-<view class="gezi" style="width: 466rpx;background-color: #fefffe9f;height: 100rpx;">
-<image src="{{item.url}}" style="width: 466rpx;"></image>
-<text style="width: 466rpx;">{{item.title}} </text>
-<text style="width: 466rpx;">{{item.text}}</text>
+<view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1406rpx">
+<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
+<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
+<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
 </view>
 </block>
 </block>
