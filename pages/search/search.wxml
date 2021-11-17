@@ -1,7 +1,7 @@
 <!--pages/search/search.wxml-->
 <view>
 <view style="background-color: #F04F5F; position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx" >
-  <icon class="iconfont icon-sign-out" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+  <icon class="iconfont icon-sign-out" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;" bindtap="exit"></icon>
 </view>
 <view class="navbar" style="width: 220rpx; height: 732rpx;">
  <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
@@ -33,12 +33,12 @@
 <view class = "line" style="position: relative; width: 466rpx; height: 20rpx; display: block; box-sizing: border-box; left: 35rpx; top: -1406rpx" ></view>
 <block wx:if="{{currentTab==0}}">
 <view style=" left: 35rpx; top: -1406rpx;width: 466rpx;position: relative;">
-<view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box;">
+<view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box; left: 0rpx; top: 2rpx">
   <icon class="iconfont icon-sousuo" style="color: #FEFFFE; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
-  <input placeholder='' placeholder-style="font-size:larger;" style="position: relative; left: 77rpx; top: 24rpx; width: 243rpx; height: 40rpx; display: block; box-sizing: border-box"></input>
+  <input placeholder='' placeholder-style="font-size:60rpx;text-align:center;" style="position: relative; left: 77rpx; top: 24rpx; width: 243rpx; height: 49rpx; display: block; box-sizing: border-box;font-size:35rpx;text-align:center;color: #dbf6d3d0;"  bindinput="getWord"></input>
   <text style="color: #FEFFFE; position: relative; left: -2rpx; top: -80rpx">SEARCH</text>
 </view>
-<view class="swiperHomePage"style="position: relative; display: block; box-sizing: border-box; left: 0rpx; top: -1073rpx" style="position: relative;width: 466rpx; height: 702rpx; display: block; box-sizing: border-box">
+<view class="swiperHomePage"style="position: relative; display: block; box-sizing: border-box; left: 0rpx; top: -1073rpx" style="position: relative; width: 466rpx; height: 702rpx; display: block; box-sizing: border-box; left: 0rpx; top: 26rpx">
 <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="position: relative; left: 53rpx; top: 0rpx; width: 360rpx; height: 360rpx; display: block; box-sizing: border-box; border-radius: 180rpx" circular="true">   
   <block wx:for="{{movies}}" wx:key="*this">  
     <swiper-item>
@@ -62,17 +62,17 @@
 
 <block wx:if="{{currentTab==1}}">
 <view style="left: 35rpx; top: -1406rpx; width: 466rpx; position: relative; height: 1372rpx; display: block; box-sizing: border-box">
-<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
-<text style="color: #fefffe9f; font-size: xxx-large; position: relative; left: 0rpx; top: 22rpx">初学者</text>
-<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 62rpx">
+<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" bindtap="chuxuezhe">
+<text style="color: #fefffe9f; font-size: 70rpx; position: relative; left: 0rpx; top: 43rpx">初学者</text>
+<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 93rpx">
 适用于初学者的教程类博客</text>
-<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 395rpx; top: -116rpx; display: inline-block; box-sizing: border-box"></icon>
+<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 388rpx; top: -73rpx; display: inline-block; box-sizing: border-box"></icon>
 </view>
-<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx;">
-<text style="color: #fefffe9f; font-size: xxx-large; position: relative; left: 0rpx; top: 22rpx">进阶者</text>
-<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 62rpx">
+<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx;" bindtap="jinjiezhe">
+<text style="color: #fefffe9f; font-size: 70rpx; position: relative; left: 0rpx; top: 43rpx">进阶者</text>
+<text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 93rpx">
 适用于进阶者的模块类参考</text>
-<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 395rpx; top: -116rpx; display: inline-block; box-sizing: border-box"></icon>
+<icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 388rpx; top: -73rpx; display: inline-block; box-sizing: border-box"></icon>
 </view>
 <view style="width: 466rpx; height: 433rpx; display: block; box-sizing: border-box">
 <text style="position: relative; font-size: larger; color: #fefffe9f; left: -1rpx; top: 35rpx">“People think that computer science is the art of geniuses but the actual reality is the opposite, just many people doing things that build on each other, like a wall of mini stones”
@@ -89,6 +89,16 @@
 </block>
 
 <block wx:if="{{currentTab==2}}">
+<block wx:for="{{favorite}}" wx:key="*this">
+<view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1406rpx">
+<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
+<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
+<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
+</view>
+</block>
+</block>
+
+<block wx:if="{{currentTab==3}}">
 <block wx:for="{{favorite}}" wx:key="*this">
 <view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1406rpx">
 <image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>

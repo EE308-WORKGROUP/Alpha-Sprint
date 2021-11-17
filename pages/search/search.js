@@ -18,7 +18,7 @@ var favorite = app.globalData.favorite;
         hasUserInfo: false,
         canIUseGetUserProfile: false,
         currentTab: 2,
-        
+        input:"",
       },
       onLoad() {
         if (wx.getUserProfile) {
@@ -26,6 +26,14 @@ var favorite = app.globalData.favorite;
             canIUseGetUserProfile: true
           })
         }
+      },
+      getWord: function (e) {
+        this.setData({
+          input: e.detail.value
+        })
+        wx.navigateTo({
+          url: '../result/result',
+        })
       },
       getUserProfile(e) {
         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
@@ -38,6 +46,20 @@ var favorite = app.globalData.favorite;
               hasUserInfo: true
             })
           }
+        })
+      },
+      chuxuezhe:function(){
+        wx.navigateTo({
+          url: '../chuxuezhe/chuxuezhe',
+        })
+      },
+      jinjiezhe:function(){
+        wx.navigateTo({
+          url: '../jinjiezhe/jinjiezhe',
+        })
+      },
+      exit:function(){
+        wx.exitMiniProgram({
         })
       },
       navbarTap: function(e){

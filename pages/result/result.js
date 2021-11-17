@@ -5,8 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-
-    },
+        navbar:[
+          {color:"#464B8D"},
+          {color:"#282F75"},
+          {color:"#464B8D"},
+          {color:"#282F75"},
+        ],
+      },
 
     /**
      * 生命周期函数--监听页面加载
@@ -14,7 +19,11 @@ Page({
     onLoad: function (options) {
 
     },
-
+    
+    back:function(){
+        wx.navigateBack({
+        })
+      },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
