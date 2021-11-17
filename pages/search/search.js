@@ -1,8 +1,9 @@
 // pages/search/search.js
-const app = getApp()
-
+const app = getApp();
+var favorite = app.globalData.favorite;
     Page({
       data: {
+        favorite,
         movies:[  
       {url:'../../image/p1.jpg',wenzi:'Lesson 1'},  
       {url:'../../image/p2.jpg',wenzi:'Lesson 2'}, 
@@ -17,12 +18,7 @@ const app = getApp()
         hasUserInfo: false,
         canIUseGetUserProfile: false,
         currentTab: 2,
-        favorite:[
-          {url:'../../image/p1.jpg',title:"EE308",text:"sjdkafjasklfjaljkfk"},
-          {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkfa"},
-          {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklffhjdskfhskjjaljkja"},
-          {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkf"},
-        ],
+        
       },
       onLoad() {
         if (wx.getUserProfile) {

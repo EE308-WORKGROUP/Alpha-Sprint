@@ -2,7 +2,9 @@
     "pages": [
         "pages/search/search",
         "pages/learn/learn",
-        "pages/result/result"
+        "pages/result/result",
+        "pages/chuxuezhe/chuxuezhe",
+        "pages/jinjiezhe/jinjiezhe"
     ],
     "window": {
         "navigationBarBackgroundColor": "#636FC1",

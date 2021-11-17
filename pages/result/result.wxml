@@ -1,2 +1,11 @@
 <!--pages/result/result.wxml-->
-<text>pages/result/result.wxml</text>
+<view class="navbar" style="width: 220rpx; height: 732rpx;">
+ <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
+  <block wx:if="{{currentTab==index}}">
+    <icon class="{{item.iconFill}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+  </block>
+  <block wx:if="{{currentTab!==index}}">
+   <icon class="{{item.icon}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+   </block>
+  </view>
+  </view>

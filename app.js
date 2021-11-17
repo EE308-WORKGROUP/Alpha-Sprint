@@ -12,5 +12,12 @@ App({
       }
     })
   },
-
+  globalData:{
+    favorite:[
+      {url:'../../image/p1.jpg',title:"EE308",text:"sjdkafjasklfjaljkfk"},
+      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkfa"},
+      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklffhjdskfhskjjaljkja"},
+      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkf"},
+    ],
+  }
 })
