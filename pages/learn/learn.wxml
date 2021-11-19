@@ -1,0 +1,8 @@
+<!--pages/learn/learn.wxml-->
+<view style="background-color: #F04F5F; position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: -2rpx; top: -13rpx"  bindtap="back">
+  <icon class="iconfont icon-fanhui" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+</view>
+
+<view style="position: relative; font-size: xxx-large; color: #dbf6d3d0; left: 218rpx; top: -162rpx; width: 455rpx; height: 115rpx; display: block; box-sizing: border-box; text-align: center">title</view>
+<image src="../../image/p2.jpg" style="position: relative; display: flex; align-items: center; left: 85rpx; top: -93rpx"></image>
+<view style="position: relative; width: 676rpx; height: 183rpx; display: block; box-sizing: border-box; left: 37rpx; top: -11rpx;height: auto;color: #dbf6d3d0;font-size: large;word-break: break-all;">dfnafaklfjaskljfkaldjgkldjlkjadfjafjasklfjasklfjasklfjklasjfaslkfjasklfjasklfjaskjfaskllkgjaklsjgklajga</view>

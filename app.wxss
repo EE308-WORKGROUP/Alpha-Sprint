@@ -1,0 +1,82 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 2940321 */
+  src: url('//at.alicdn.com/t/font_2940321_661vz30v926.woff2?t=1637121125412') format('woff2'),
+       url('//at.alicdn.com/t/font_2940321_661vz30v926.woff?t=1637121125412') format('woff'),
+       url('//at.alicdn.com/t/font_2940321_661vz30v926.ttf?t=1637121125412') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiantou:before {
+  content: "\e665";
+}
+
+.icon-learn:before {
+  content: "\e671";
+}
+
+.icon-learnFilling:before {
+  content: "\e68b";
+}
+
+.icon-close:before {
+  content: "\e668";
+}
+
+.icon-favorite:before {
+  content: "\e66f";
+}
+
+.icon-home:before {
+  content: "\e674";
+}
+
+.icon-menu:before {
+  content: "\e677";
+}
+
+.icon-sousuo:before {
+  content: "\e67d";
+}
+
+.icon-sign-out:before {
+  content: "\e67e";
+}
+
+.icon-time:before {
+  content: "\e680";
+}
+
+.icon-timeFilling:before {
+  content: "\e689";
+}
+
+.icon-favoriteFilling:before {
+  content: "\e68a";
+}
+
+.icon-homeFilling:before {
+  content: "\e68d";
+}
+
+.icon-fanhui::before{
+  content:"\e66c";
+}

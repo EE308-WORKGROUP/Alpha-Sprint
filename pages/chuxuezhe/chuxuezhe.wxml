@@ -1,0 +1,19 @@
+<!--pages/chuxuezhe/chuxuezhe.wxml-->
+<view style="background-color: #F04F5F; position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx" >
+  <icon class="iconfont icon-fanhui" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;" bindtap="back"></icon>
+</view>
+<view class="navbar" style="width: 220rpx; height: 732rpx;">
+ <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
+  </view>
+</view>
+<view class = "line" style="position: relative; width: 466rpx; height: 20rpx; display: block; box-sizing: border-box; left: 35rpx; top: -915rpx" ></view>
+<view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box; left: 35rpx; top: -914rpx">
+  <text style="color: #FEFFFE; position: relative; left: -2rpx; top: 37rpx; font-size: 60rpx">进阶者</text>
+</view>
+<block wx:for="searchResult" wx:key="*this">
+  <view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1066rpx">
+<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
+<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
+<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
+</view>
+</block>

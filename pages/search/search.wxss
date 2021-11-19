@@ -1,0 +1,85 @@
+/* pages/search/search.wxss */
+page{
+  height: 100%;
+  background-color: #636FC1;
+}
+
+.searchPart::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+.line::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+.swiperHomePage::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+.userAvatarUrl{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.chuxuezhe::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+
+.minyan::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+.zhongwen::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+.gezi::after{
+  content: "";
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  background: #fefefe;
+}
+
+
+

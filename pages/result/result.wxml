@@ -1,0 +1,28 @@
+<!--pages/result/result.wxml-->
+<view style="background-color: #F04F5F; position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx" bindtap="back">
+  <icon class="iconfont icon-fanhui" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+</view>
+<view class="navbar" style="width: 220rpx; height: 732rpx;">
+ <view wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap" style="position: relative; width: 220rpx; height: 183rpx; display: block; box-sizing: border-box; left: 531rpx; top: 0rpx;background-color: {{item.color}};">
+  <block wx:if="{{currentTab==index}}">
+    <icon class="{{item.iconFill}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+  </block>
+  <block wx:if="{{currentTab!==index}}">
+   <icon class="{{item.icon}}" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: 80rpx; top: 61.5rpx; display: inline-block; box-sizing: border-box;height: 60rpx;width: 60rpx;"></icon>
+   </block>
+  </view>
+  </view>
+  
+<view class = "line" style="position: relative; width: 466rpx; height: 20rpx; display: block; box-sizing: border-box; left: 35rpx; top: -915rpx" ></view>
+<view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box; left: 35rpx; top: -914rpx">
+  <icon class="iconfont icon-sousuo" style="color: #FEFFFE; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
+  
+  <text style="color: #FEFFFE; position: relative; left: -53rpx; top: 2rpx">SEARCH RESULT</text>
+</view>
+<block wx:for="searchResult" wx:key="*this">
+  <view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -914rpx">
+<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -8rpx; position: relative"></image>
+<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
+<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
+</view>
+</block>
