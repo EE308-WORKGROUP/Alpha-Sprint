@@ -16,7 +16,9 @@ Page({
         })
       },
     onLoad: function (options) {
-
+      this.setData({
+        web:options.learn
+      })
     },
 
     /**

@@ -17,7 +17,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      this.setData({
+        input:options.input
+      })
+      var that = this;
+      wx.request({
+        url: 'http://106.14.59.59:8000/arduino/search/'+that.data.input,
+        success: (res) => {
+          that.setData({
+            searchResult:res.data,
+          })
+          console.log(that.data.searchResult);
+        },
+        fail: (res) => {
+          console.log(-1);
+        },
+        complete: (res) => {},
+      })
     },
     
     back:function(){

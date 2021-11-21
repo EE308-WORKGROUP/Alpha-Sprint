@@ -15,14 +15,24 @@
   
 <view class = "line" style="position: relative; width: 466rpx; height: 20rpx; display: block; box-sizing: border-box; left: 35rpx; top: -915rpx" ></view>
 <view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box; left: 35rpx; top: -914rpx">
-  <icon class="iconfont icon-sousuo" style="color: #FEFFFE; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
+  <icon class="iconfont icon-sousuo" style="color: #dbf6d3d0; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
   
-  <text style="color: #FEFFFE; position: relative; left: -53rpx; top: 2rpx">SEARCH RESULT</text>
+  <text style="color: #dbf6d3d0; position: relative; left: -53rpx; top: 2rpx">SEARCH RESULT</text>
 </view>
-<block wx:for="searchResult" wx:key="*this">
-  <view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -914rpx">
-<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: -8rpx; position: relative"></image>
-<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
-<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
+
+
+<block wx:for="{{searchResult}}" wx:key="unique">
+<navigator url="../learn/learn?learn={{item.link}}">
+<view class="gezi" style="width: 466rpx; height: 258rpx; position: relative; left: 28rpx; top: -915rpx; display: block; box-sizing: border-box">
+<image src="../../image/taiji.png" style="width: 220rpx; height: 220rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
+<view style="width: 220rpx; position: relative; left: 245rpx; top: -174rpx; color: #fefffe9f; word-break: break-all; font-size: 30rpx; height: 77rpx; display: block; box-sizing: border-box">{{item.title}} </view>
+<block wx:if="{{item.current==0}}">
+<icon class="iconfont icon-favorite" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
+</block>
+<block wx:if="{{item.current==1}}">
+<icon class="iconfont icon-favoriteFilling" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
+</block>
+<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all"></view>
 </view>
+</navigator>
 </block>

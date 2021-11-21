@@ -17,9 +17,10 @@ var favorite = app.globalData.favorite;
         userInfo: {},
         hasUserInfo: false,
         canIUseGetUserProfile: false,
-        currentTab: 2,
-        input:"",
+        currentTab: 0,
+        input:" ",
       },
+
       onLoad() {
         if (wx.getUserProfile) {
           this.setData({
@@ -27,14 +28,26 @@ var favorite = app.globalData.favorite;
           })
         }
       },
+
       getWord: function (e) {
         this.setData({
           input: e.detail.value
         })
-        wx.navigateTo({
-          url: '../result/result',
-        })
+        console.log(this.data.input);
       },
+
+      resultSet:function(){
+        console.log(this.data.input)
+        if(this.data.input!==" "){
+        wx.navigateTo({
+          url: '../result/result?input='+this.data.input,
+        })
+      }
+      else{
+        console.log(-1)
+      }
+      },
+
       getUserProfile(e) {
         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
         // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

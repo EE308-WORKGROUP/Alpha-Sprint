@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #dbf6d3d0;
 }
 .searchPart::after{
   content: "";
@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #dbf6d3d0;
 }
 .gezi::after{
     content: "";
@@ -30,5 +30,5 @@
     left: 0;
     right: 0;
     height: 3rpx;
-    background: #fefefe;
+    background: #dbf6d3d0;
   }
