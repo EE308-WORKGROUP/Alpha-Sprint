@@ -23,19 +23,42 @@ Page({
       method:"GET",
       header:{'content-type':'appplication/json,charset=utf-8'},
       success: (result) => {
-        console.log(result.data);
-        console.log(typeof(result.data));
+
         that.setData({
           searchResult:result.data,
         });
-        console.log(that.data.searchResult);
+
       },
 
       fail: (res) => {},
       complete: (res) => {},
     })
   },
-  
+  history:function(event){
+    this.setData({
+      historyMiddle:this.data.searchResult[event.currentTarget.dataset.idx]
+    })
+    console.log(this.data.historyMiddle)
+    let that = this
+    wx.getStorage({
+      key: "history",  // 和存储的key值一致；
+      success: function(res){
+        let historyVal = res.data
+        console.log(historyVal)
+        historyVal.splice(0,0,that.data.historyMiddle);
+        historyVal.splice(9,1);
+        console.log(historyVal)
+        that.setData({
+          history:historyVal
+        })  // 在这里打印出存储的值；
+        console.log(that.data.history)
+        wx.setStorage({
+          key:"history",
+          data:that.data.history
+        })
+      },
+    })
+  },
   back:function(){
     wx.navigateBack({
     })

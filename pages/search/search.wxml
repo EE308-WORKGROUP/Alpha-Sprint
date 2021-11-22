@@ -70,7 +70,7 @@
 适用于初学者的教程类博客</text>
 <icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 388rpx; top: -73rpx; display: inline-block; box-sizing: border-box"></icon>
 </view>
-<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx;" bindtap="chuxuezhe">
+<view class="chuxuezhe" style="position: relative; width: 466rpx; height: 279rpx;" bindtap="jinjiezhe">
 <text style="color: #fefffe9f; font-size: 70rpx; position: relative; left: 0rpx; top: 43rpx">进阶者</text>
 <text style="color: #fefffe9f; font-size: larger; position: relative; left: 0rpx; top: 93rpx">
 适用于进阶者的模块类参考</text>
@@ -90,38 +90,17 @@
 </view>
 </block>
 
-<block wx:if="{{currentTab==2}}">
-<block wx:for="{{favorite}}" wx:key="unique">
-<navigator url="../video/video?video={{item.link}}">
-<view class="gezi" style="width: 466rpx; height: 258rpx; position: relative; left: 35rpx; top: -1406rpx; display: block; box-sizing: border-box">
-<image src="../../image/taiji.png" style="width: 220rpx; height: 220rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
-<text style="width: 246rpx; position: relative; left: 23rpx; top: -136rpx; color: #fefffe9f; word-break: break-all; font-size: 40rpx">{{item.title}} </text>
-<block wx:if="{{item.current==0}}">
-<icon class="iconfont icon-favorite" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
-</block>
-<block wx:if="{{item.current==1}}">
-<icon class="iconfont icon-favoriteFilling" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
-</block>
-<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all"></view>
-</view>
-</navigator>
-</block>
-</block>
 
-<block wx:if="{{currentTab==3}}">
-<block wx:for="{{favorite}}" wx:key="unique">
-<navigator url="../video/video?video={{item.link}}">
-<view class="gezi" style="width: 466rpx; height: 258rpx; position: relative; left: 35rpx; top: -1406rpx; display: block; box-sizing: border-box">
+
+<block wx:if="{{currentTab==2}}">
+  <block wx:for="{{history}}" wx:key="unique">
+  <block wx:if="{{item.title}}">
+<navigator style="width: 466rpx; height: 258rpx; position: relative; left: 28rpx; top: -1406rpx; display: block; box-sizing: border-box" url="../learn/learn?learn={{item.link}}">
+<view class="gezi" >
 <image src="../../image/taiji.png" style="width: 220rpx; height: 220rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
-<text style="width: 246rpx; position: relative; left: 23rpx; top: -136rpx; color: #fefffe9f; word-break: break-all; font-size: 40rpx">{{item.title}} </text>
-<block wx:if="{{item.current==0}}">
-<icon class="iconfont icon-favorite" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
-</block>
-<block wx:if="{{item.current==1}}">
-<icon class="iconfont icon-favoriteFilling" style="color: #dbf6d3d0; font-size: 60rpx; position: relative; left: -105rpx; top: 13rpx; display: inline-block; box-sizing: border-box; height: 60rpx; width: 60rpx"></icon>
-</block>
-<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all"></view>
+<view style="width: 220rpx; position: relative; left: 245rpx; top: -174rpx; color: #fefffe9f; word-break: break-all; font-size: 30rpx; height: 77rpx; display: block; box-sizing: border-box">{{item.title}} </view>
 </view>
 </navigator>
+</block>
 </block>
 </block>

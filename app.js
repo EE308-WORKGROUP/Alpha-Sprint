@@ -3,16 +3,18 @@ App({
   globalData:{
     jinjiezheValue:null,
     history:[
-      {url:'../../image/p1.jpg',title:"EE308",text:"sjdkafjasklfjaljkfk",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkfa",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklffhjdskfhskjjaljkja",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkf",current:0},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
     ],
     favorite:[
-      {url:'../../image/p1.jpg',title:"EE308",text:"sjdkafjasklfjaljkfk",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkfa",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklffhjdskfhskjjaljkja",current:0},
-      {url:'../../image/Arduino.png',title:"EE308",text:"sjdkafjasklfjaljkf",current:0},
     ],
   },
   onLaunch() {
@@ -26,6 +28,25 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+
+    let that = this
+    wx.getStorage({
+      key: "history",  // 和存储的key值一致；
+      success: function(res){
+        if(!res.data){
+          wx.setStorage({
+            key:"history",
+            data:that.globalData.history
+          })
+        }
+      },
+      fail:function(){
+        wx.setStorage({
+          key:"history",
+          data:that.globalData.history
+        })
+      }
+    })
   },
 
   historyFun: function(item) {
@@ -35,6 +56,7 @@ App({
       }
     }
     history.push(item)
+    console.log(history)
   },
 
   favoriteFun:function(item){

@@ -1,4 +1,5 @@
 // pages/jinjiezhe/jinjiezhe.js
+var app = getApp();
 Page({
 
   /**
@@ -6,11 +7,12 @@ Page({
    */
   data: {
     navbar:[
-      {color:"#464B8D"},
-      {color:"#282F75"},
-      {color:"#464B8D"},
-      {color:"#282F75"},
+      {color:"#464B8D",colorFilling:"#636FC1"},
+      {color:"#282F75",colorFilling:"#636FC1"},
+      {color:"#464B8D",colorFilling:"#636FC1"},
+      {color:"#282F75",colorFilling:"#636FC1"},
     ],
+    currentTab:0,
   },
 
 
@@ -22,7 +24,64 @@ Page({
    * 生命周期函数--监听页面加载
    */
 
-
+  change0:function(){
+    this.setData({
+      currentTab:0
+    })
+  },
+  change1:function(){
+    this.setData({
+      currentTab:1
+    })
+  },
+  history0:function(event){
+    this.setData({
+      historyMiddle:this.data.searchResult0[event.currentTarget.dataset.idx]
+    })
+    console.log(this.data.historyMiddle)
+    let that = this
+    wx.getStorage({
+      key: "history",  // 和存储的key值一致；
+      success: function(res){
+        let historyVal = res.data
+        historyVal.splice(0,0,that.data.historyMiddle);
+        historyVal.splice(9,1);
+        console.log(historyVal)
+        that.setData({
+          history:historyVal
+        })  // 在这里打印出存储的值；
+        console.log(that.data.history)
+        wx.setStorage({
+          key:"history",
+          data:that.data.history
+        })
+      },
+    })
+  },
+  history1:function(event){
+    this.setData({
+      historyMiddle:this.data.searchResult1[event.currentTarget.dataset.idx]
+    })
+    console.log(this.data.historyMiddle)
+    let that = this
+    wx.getStorage({
+      key: "history",  // 和存储的key值一致；
+      success: function(res){
+        let historyVal = res.data
+        historyVal.splice(0,0,that.data.historyMiddle);
+        historyVal.splice(9,1);
+        console.log(historyVal)
+        that.setData({
+          history:historyVal
+        })  // 在这里打印出存储的值；
+        console.log(that.data.history)
+        wx.setStorage({
+          key:"history",
+          data:that.data.history
+        })
+      },
+    })
+  },
   onLoad: function (options) {
     var that = this;
     wx.request({
@@ -30,12 +89,24 @@ Page({
       method:"GET",
       header:{'content-type':'appplication/json,charset=utf-8'},
       success: (result) => {
-        console.log(result.data);
-        console.log(typeof(result.data));
         that.setData({
-          searchResult:result.data,
+          searchResult0:result.data,
         });
-        console.log(that.data.searchResult);
+        console.log(that.data.searchResult0);
+      },
+
+      fail: (res) => {},
+      complete: (res) => {},
+    })
+    wx.request({
+      url: 'http://106.14.59.59:8000/arduino/data',
+      method:"GET",
+      header:{'content-type':'appplication/json,charset=utf-8'},
+      success: (result) => {
+        that.setData({
+          searchResult1:result.data,
+        });
+        console.log(that.data.searchResult1);
       },
 
       fail: (res) => {},
@@ -43,6 +114,13 @@ Page({
     })
   },
 
+  navbarTap: function(e){
+    this.setData({
+      currentTab : e.currentTarget.dataset.idx,
+    })
+    console.log(e.currentTarget.dataset.idx);
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

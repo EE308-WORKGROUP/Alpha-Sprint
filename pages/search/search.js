@@ -11,8 +11,7 @@ var favorite = app.globalData.favorite;
         navbar:[
         {color:"#464B8D",icon:"iconfont icon-home",iconFill:"iconfont icon-homeFilling"},
         {color:"#282F75",icon:"iconfont icon-learn",iconFill:"iconfont icon-learnFilling"},
-        {color:"#464B8D",icon:"iconfont icon-favorite",iconFill:"iconfont icon-favoriteFilling"},
-        {color:"#282F75",icon:"iconfont icon-time",iconFill:"iconfont icon-timeFilling"},
+        {color:"#464B8D",icon:"iconfont icon-time",iconFill:"iconfont icon-timeFilling"},
       ],
         userInfo: {},
         hasUserInfo: false,
@@ -27,8 +26,20 @@ var favorite = app.globalData.favorite;
             canIUseGetUserProfile: true
           })
         }
+        
       },
-
+      
+      onShow(){
+        let that = this
+        wx.getStorage({
+          key: "history",  // 和存储的key值一致；
+          success: function(res){
+            that.setData({
+              history:res.data
+            })  // 在这里打印出存储的值；
+          },
+        })
+      },
       getWord: function (e) {
         this.setData({
           input: e.detail.value

@@ -1,4 +1,5 @@
 // pages/result/result.js
+const app = getApp();
 Page({
 
     /**
@@ -25,9 +26,22 @@ Page({
         url: 'http://106.14.59.59:8000/arduino/search/'+that.data.input,
         success: (res) => {
           that.setData({
-            searchResult:res.data,
+            searchResult1:res.data,
           })
-          console.log(that.data.searchResult);
+          console.log(that.data.searchResult1);
+        },
+        fail: (res) => {
+          console.log(-1);
+        },
+        complete: (res) => {},
+      })
+      wx.request({
+        url: 'http://106.14.59.59:8000/arduino/search/'+that.data.input,
+        success: (res) => {
+          that.setData({
+            searchResult2:res.data,
+          })
+          console.log(that.data.searchResult2);
         },
         fail: (res) => {
           console.log(-1);
@@ -35,11 +49,54 @@ Page({
         complete: (res) => {},
       })
     },
-    
-    back:function(){
-        wx.navigateBack({
-        })
-      },
+    history1:function(event){
+      this.setData({
+        historyMiddle:this.data.searchResult1[event.currentTarget.dataset.idx]
+      })
+      console.log(this.data.historyMiddle)
+      let that = this
+      wx.getStorage({
+        key: "history",  // 和存储的key值一致；
+        success: function(res){
+          let historyVal = res.data
+          historyVal.splice(0,0,that.data.historyMiddle);
+          historyVal.splice(9,1);
+          console.log(historyVal)
+          that.setData({
+            history:historyVal
+          })  // 在这里打印出存储的值；
+          console.log(that.data.history)
+          wx.setStorage({
+            key:"history",
+            data:that.data.history
+          })
+        },
+      })
+    },
+    history2:function(event){
+      this.setData({
+        historyMiddle:this.data.searchResult2[event.currentTarget.dataset.idx]
+      })
+      console.log(this.data.historyMiddle)
+      let that = this
+      wx.getStorage({
+        key: "history",  // 和存储的key值一致；
+        success: function(res){
+          let historyVal = res.data
+          historyVal.splice(0,0,that.data.historyMiddle);
+          historyVal.splice(9,1);
+          console.log(historyVal)
+          that.setData({
+            history:historyVal
+          })  // 在这里打印出存储的值；
+          console.log(that.data.history)
+          wx.setStorage({
+            key:"history",
+            data:that.data.history
+          })
+        },
+      })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
