@@ -11,30 +11,54 @@ var favorite = app.globalData.favorite;
         navbar:[
         {color:"#464B8D",icon:"iconfont icon-home",iconFill:"iconfont icon-homeFilling"},
         {color:"#282F75",icon:"iconfont icon-learn",iconFill:"iconfont icon-learnFilling"},
-        {color:"#464B8D",icon:"iconfont icon-favorite",iconFill:"iconfont icon-favoriteFilling"},
-        {color:"#282F75",icon:"iconfont icon-time",iconFill:"iconfont icon-timeFilling"},
+        {color:"#464B8D",icon:"iconfont icon-time",iconFill:"iconfont icon-timeFilling"},
       ],
         userInfo: {},
         hasUserInfo: false,
         canIUseGetUserProfile: false,
-        currentTab: 2,
-        input:"",
+        currentTab: 0,
+        input:" ",
       },
+
       onLoad() {
         if (wx.getUserProfile) {
           this.setData({
             canIUseGetUserProfile: true
           })
         }
+        
+      },
+      
+      onShow(){
+        let that = this
+        wx.getStorage({
+          key: "history",  // 和存储的key值一致；
+          success: function(res){
+            that.setData({
+              history:res.data
+            })  // 在这里打印出存储的值；
+          },
+        })
       },
       getWord: function (e) {
         this.setData({
           input: e.detail.value
         })
-        wx.navigateTo({
-          url: '../result/result',
-        })
+        console.log(this.data.input);
       },
+
+      resultSet:function(){
+        console.log(this.data.input)
+        if(this.data.input!==" "){
+        wx.navigateTo({
+          url: '../result/result?input='+this.data.input,
+        })
+      }
+      else{
+        console.log(-1)
+      }
+      },
+
       getUserProfile(e) {
         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
         // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

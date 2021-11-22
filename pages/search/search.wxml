@@ -34,9 +34,11 @@
 <block wx:if="{{currentTab==0}}">
 <view style=" left: 35rpx; top: -1406rpx;width: 466rpx;position: relative;">
 <view class = "searchPart" style="position: relative; width: 466rpx; height: 162rpx; display: block; box-sizing: border-box; left: 0rpx; top: 2rpx">
-  <icon class="iconfont icon-sousuo" style="color: #FEFFFE; font-size: 50rpx; position: relative; left: -5rpx; top: 74rpx;font-weight: 100rpx;"></icon>
-  <input placeholder='' placeholder-style="font-size:60rpx;text-align:center;" style="position: relative; left: 77rpx; top: 24rpx; width: 243rpx; height: 49rpx; display: block; box-sizing: border-box;font-size:35rpx;text-align:center;color: #dbf6d3d0;"  bindinput="getWord"></input>
-  <text style="color: #FEFFFE; position: relative; left: -2rpx; top: -80rpx">SEARCH</text>
+<view style="position: relative; left: 398rpx; top: 87rpx; width: 50rpx; height: 50rpx; display: block; box-sizing: border-box" bindtap="resultSet">
+  <icon class="iconfont icon-sousuo" style="color: #fefffecb; font-size: 50rpx; position: relative; font-weight: 100rpx;"></icon>
+</view>
+  <input placeholder='' placeholder-style="font-size:60rpx;text-align:center;" style="position: relative; left: 6rpx; top: 39rpx; width: 392rpx; height: 49rpx; display: block; box-sizing: border-box; font-size: 35rpx; text-align: center; color: #fefffecb"  bindinput="getWord"></input>
+  <text style="color: #fefffecb; position: relative; left: 6rpx; top: -73rpx">SEARCH</text>
 </view>
 <view class="swiperHomePage"style="position: relative; display: block; box-sizing: border-box; left: 0rpx; top: -1073rpx" style="position: relative; width: 466rpx; height: 702rpx; display: block; box-sizing: border-box; left: 0rpx; top: 26rpx">
 <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" style="position: relative; left: 53rpx; top: 0rpx; width: 360rpx; height: 360rpx; display: block; box-sizing: border-box; border-radius: 180rpx" circular="true">   
@@ -44,16 +46,16 @@
     <swiper-item>
       <view style="width: 400rpx; height: 400rpx; display: block; box-sizing: border-box;border-radius: 180rpx;">
       <image src="{{item.url}}" class="slide-image" mode="aspectFill" style="width: 360rpx; height: 360rpx; border-radius: 200rpx; display: inline-block; box-sizing: border-box"></image>
-      <text style="color: #dbf6d3d0; position: relative; font-size: xx-large; top: -305rpx; left: 60rpx">{{item.wenzi}}</text>
+      <text style="color: #fefffecb; position: relative; font-size: xx-large; top: -305rpx; left: 60rpx">{{item.wenzi}}</text>
       </view>
-      <icon class="iconfont icon-jiantou" style="color: #dbf6d3d0; font-size: 70rpx; position: relative; left: 48rpx; top: -173rpx; display: inline-block; box-sizing: border-box;;"></icon>
+      <icon class="iconfont icon-jiantou" style="color: #fefffecb; font-size: 70rpx; position: relative; left: 48rpx; top: -173rpx; display: inline-block; box-sizing: border-box;;"></icon>
     </swiper-item>  
   </block>
 </swiper>
 <view style="width: 466rpx; height: 383rpx; display: block; box-sizing: border-box">
-  <text class = "jitang" style="position: relative; left: 22rpx; top: 37rpx; color: #fefffe9f; width: 432rpx; height: 231rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">Most of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris.”
+  <text class = "jitang" style="position: relative; left: 22rpx; top: 37rpx; color: #fefffecb; width: 432rpx; height: 231rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">Most of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris.”
 </text>
-<text class = "jitang" style="position: relative; left: 169rpx; top: 37rpx; color: #fefffe9f; width: 285rpx; height: 58rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">—— Larry Wall
+<text class = "jitang" style="position: relative; left: 169rpx; top: 37rpx; color: #fefffecb; width: 285rpx; height: 58rpx; display: block; box-sizing: border-box; font-weight: 400; font-size: large">—— Larry Wall
 </text>
 </view>
 </view>
@@ -88,32 +90,17 @@
 </view>
 </block>
 
+
+
 <block wx:if="{{currentTab==2}}">
-<block wx:for="{{favorite}}" wx:key="*this">
-<view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1406rpx">
-<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
-<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
-<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
+  <block wx:for="{{history}}" wx:key="unique">
+  <block wx:if="{{item.title}}">
+<navigator style="width: 466rpx; height: 258rpx; position: relative; left: 28rpx; top: -1406rpx; display: block; box-sizing: border-box" url="../learn/learn?learn={{item.link}}">
+<view class="gezi" >
+<image src="../../image/taiji.png" style="width: 220rpx; height: 220rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
+<view style="width: 220rpx; position: relative; left: 245rpx; top: -174rpx; color: #fefffe9f; word-break: break-all; font-size: 30rpx; height: 77rpx; display: block; box-sizing: border-box">{{item.title}} </view>
 </view>
+</navigator>
 </block>
 </block>
-
-<block wx:if="{{currentTab==3}}">
-<block wx:for="{{favorite}}" wx:key="*this">
-<view class="gezi" style="width: 466rpx; height: auto; position: relative; left: 35rpx; top: -1406rpx">
-<image src="{{item.url}}" style="width: 220rpx; height: 145rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative"></image>
-<text style="width: 246rpx; position: relative; left: 0rpx; top: -69rpx; color: #fefffe9f; word-break: break-all">{{item.title}} </text>
-<view style="width: 246rpx;position: relative; color: #fefffe9f; left: 220rpx; top: -48rpx; word-break: break-all">{{item.text}}</view>
-</view>
 </block>
-</block>
-
-
-
-
-
-
-
-
-
-

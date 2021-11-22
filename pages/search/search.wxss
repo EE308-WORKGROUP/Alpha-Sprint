@@ -12,7 +12,7 @@ page{
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #fefffecb;
 }
 .line::after{
   content: "";
@@ -22,7 +22,7 @@ page{
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #fefffecb;
 }
 .swiperHomePage::after{
   content: "";
@@ -32,7 +32,7 @@ page{
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #fefffecb;
 }
 .userAvatarUrl{
   width: 100rpx;
@@ -47,7 +47,7 @@ page{
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #fefffecb;
 }
 
 .minyan::after{
@@ -58,7 +58,7 @@ page{
   left: 0;
   right: 0;
   height: 3rpx;
-  background: #fefefe;
+  background: #fefffecb;
 }
 .zhongwen::after{
   content: "";
